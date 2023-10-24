@@ -1,5 +1,6 @@
 const { Sequelize } = require('sequelize') 
 require('dotenv').config()
+const { DataTypes } = require('sequelize')
 
 const Videogames = require('./models/Videogames.js')  
 const Users = require('./models/Users.js')
@@ -17,14 +18,23 @@ Users(sequelize)
 const { Videogame, User } = sequelize.models
 
 ///Las relaciones:
-const JuegoFavorito = sequelize.define('JuegoFavorito', {})
-const JuegoComprado = sequelize.define('JuegoComprado', {})
+const VG_User = sequelize.define('VG_user', {
+    favorites: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+    },
+    comprado: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+    },
+    review: {
+        type: DataTypes.STRING,
+        defaultValue: ''
+    }
+}, {timestamps: false})
 
-Videogame.belongsToMany(User, {through: JuegoFavorito})
-User.belongsToMany(Videogame, {through: JuegoFavorito})
-
-Videogame.belongsToMany(User, {through: JuegoComprado})
-User.belongsToMany(Videogame, {through: JuegoComprado})
+Videogame.belongsToMany(User, {through: VG_User})
+User.belongsToMany(Videogame, {through: VG_User})
 
 console.log(sequelize.models);
 module.exports = {

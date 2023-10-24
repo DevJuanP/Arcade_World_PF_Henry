@@ -1,4 +1,4 @@
-const { User, Videogame, JuegoFavorito } = require('../db') 
+const { User, Videogame } = require('../db') 
 
 const getAllUserHandler = async (req, res) => {
     try {
