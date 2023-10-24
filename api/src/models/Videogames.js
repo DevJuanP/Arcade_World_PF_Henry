@@ -11,6 +11,31 @@ module.exports = (sequelize) => {
 
         name: {
             type: DataTypes.STRING,
-        }
+            allowNull: false,
+            unique: true
+          },
+        description: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        image: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        rating: {
+            type: DataTypes.FLOAT,
+            allowNull: false,
+            defaultValue: 0,
+            validate: {
+                min: 0,
+                max: 5,
+            }
+            },
+        price: {
+            type: DataTypes.FLOAT,
+            allowNull: false,
+            
+        },
+        
     },  {timestamps: false})
-}
+} 
