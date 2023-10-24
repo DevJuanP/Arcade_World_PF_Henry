@@ -1,5 +1,8 @@
-import { Router } from 'express'
+const { Router } = require('express') 
+const VGrouter = require('./VGrouter.js') 
 
 const router = Router()
 
-export default router
+router.use('/videogame', VGrouter)
+
+module.exports = router

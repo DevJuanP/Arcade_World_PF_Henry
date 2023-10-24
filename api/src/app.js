@@ -1,10 +1,11 @@
-import express from 'express'
-import morgan from 'morgan'
-import cors from 'cors'
-import routes from './routes/index.js'
+const express = require('express') 
+const morgan = require('morgan') 
+const cors = require('cors') 
+const routes = require('./routes/index.js') 
 
 const server = express()
 
+server.use(express.json())
 server.use(morgan('dev'))
 server.use(cors({
   origin: '*',
@@ -22,4 +23,4 @@ server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
     res.status(status).send(message);
   });
 
-export default server
+module.exports = server
