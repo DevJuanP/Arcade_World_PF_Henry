@@ -10,7 +10,7 @@ const postVGHandler = async (req, res) => {
         const {name,description,image,release,price} = req.body 
         await Videogame.create({
             ... req.body,  
-        })
+        }) 
         res.status(200).json({
             succses: 'The video game was successfully uploaded to the database'
         })
@@ -23,3 +23,8 @@ module.exports = {
     postVGHandler,
     getAllVGHandler
 }
+
+
+//hola
+
+
