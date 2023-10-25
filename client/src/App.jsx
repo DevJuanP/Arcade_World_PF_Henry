@@ -1,21 +1,24 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import { About, Home, Library, Store, Detail } from './views/index.js';
+// import Navbar from './components/navbar/Navbar.jsx';
+import Cart from './components/cart/cart.jsx';
+
 import './App.css'
 
 function App() {
 
-  const location = useLocation();
+  // const location = useLocation();
 
   return (
     <div>
-      {location.pathname !== '/' && <NavBar/>}
+      {/* {location.pathname !== '/' && <Navbar/>} */}
       <Routes>
-        <Route path='/home' element={<Welcome/>}></Route>
-        <Route path='/login' element={<Login/>}></Route>
+        <Route path='/home' element={<Home/>}></Route>
         <Route path='/about' element={<About/>}></Route>
         <Route path='/library' element={<Library/>}></Route>
-        <Route path='/store' element={<ShoppingStore/>}></Route>
+        <Route path='/store' element={<Store/>}></Route>
         <Route path='/detail/:id' element={<Detail/>}></Route>
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart/>} />
       </Routes>
     </div>
   )
