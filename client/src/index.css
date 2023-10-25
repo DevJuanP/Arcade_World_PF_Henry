@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1;
@@ -46,4 +47,8 @@ body {
 
 a {
   text-decoration: none;
+=======
+body{
+  margin: 0px;
+>>>>>>> 9ef2c7e2fb0c75595ec3c170bdc718321b66790e
 }
