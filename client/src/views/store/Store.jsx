@@ -1,9 +1,14 @@
+import React from 'react';
+import NavBar from '../../components/navbar/navbar';
+import AllVideogames from '../../components/allVideogames/allVideogames';
 
-
-function Store() {
+const shoppingStore = () => {
   return (
-    <div>Store</div>
-  )
+    <div className='home-wrapper'>
+      <NavBar />
+      <AllVideogames />
+    </div>
+  );
 }
 
-export default Store
+export default shoppingStore;
