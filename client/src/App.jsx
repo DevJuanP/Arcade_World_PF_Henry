@@ -1,6 +1,6 @@
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Home from "./views/home/home"
-import ShoppingStore from "./views/shoppingStore/shoppingStore"
+import ShoppingStore from "./views/store/store"
 import './App.css'
 import Favoritos from "./components/FavoriteCompras/Favoritos"
 
