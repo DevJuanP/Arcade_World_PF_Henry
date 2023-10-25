@@ -22,20 +22,18 @@ module.exports = (sequelize) => {
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        rating: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0,
-            validate: {
-                min: 0,
-                max: 5,
-            }
-            },
+        
         price: {
             type: DataTypes.FLOAT,
             allowNull: false,
             
         },
+
+        release: {
+            type: DataTypes.DATEONLY,
+            allowNull: false,
+         },
+        
         
     },  {timestamps: false})
 } 
