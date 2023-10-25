@@ -27,6 +27,10 @@ module.exports = (sequelize) => {
             allowNull: false,
            ///cometario 
         },
+        released: {
+            type: DataTypes.DATEONLY,//yyyy-mm-dd
+            allowNull: false
+        }
         
     },  {timestamps: false})
 } 
