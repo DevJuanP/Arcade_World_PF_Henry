@@ -1,5 +1,6 @@
 # USO DE NODEMAILER IMPLEMENTADO PARA EL BACKEND, MD BORRABLE (DEPENDENCIA YA INSTALADA)
 
+```
 const express = require('express')
 const app = express()
 const port = 3000
@@ -14,6 +15,7 @@ let caso = 'saludo';
 
 //Para en caso de tener muchos destinatarios asi más o menos seria la logica:
 let destinatarios = ['juanpajueloch@gmail.com', 'chuchobavaresco@gmail.com', 'gabriel.gaboz123@gmail.com'];
+
 
 // Creamos una instancia del transportador usando SMTP
 let transporter = nodemailer.createTransport({
@@ -59,3 +61,4 @@ app.listen(port, () => {
   console.log(`nodemailerProject is listening at http://localhost:${port}`)
 })
 
+```
