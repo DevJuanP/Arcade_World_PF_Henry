@@ -7,14 +7,12 @@ function Navbar() {
   
   return (
     <div>
-      {location.pathname !== '/login' && (
-        <>
-          <div className={style.butn}>
-            <Link to= '/login'><button >Log In</button></Link>
-          </div>
-          <Search/>
-        </>
-      )}
+
+      <div className={style.butn}>
+        <Link to= '/auth'><button >Log In</button></Link>
+      </div>
+       <Search/>
+
 
       <div className={style.navContent}>
         <NavLink className={style.homeForm} to= '/'>Home</NavLink>
