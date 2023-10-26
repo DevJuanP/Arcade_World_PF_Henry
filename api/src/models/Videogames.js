@@ -22,20 +22,15 @@ module.exports = (sequelize) => {
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        rating: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-            defaultValue: 0,
-            validate: {
-                min: 0,
-                max: 5,
-            }
-            },
         price: {
             type: DataTypes.FLOAT,
             allowNull: false,
-            
+           ///cometario 
         },
+        released: {
+            type: DataTypes.DATEONLY,//yyyy-mm-dd
+            allowNull: false
+        }
         
     },  {timestamps: false})
 } 
