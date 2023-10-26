@@ -337,8 +337,7 @@ const LoadDB = async () => {
             return vg.platforms.map( p => platform_s.indexOf(p)+1)
         })
         
-        console.log(gamesIds, VG_P);
-
+       
         for(let i in gamesIds){
             for(let j in VG_P[i]){
                 await videogame_Plataform.create({
@@ -348,10 +347,11 @@ const LoadDB = async () => {
             }
         }
         console.log("relaciones de Videogames con platforms completada");
-
+        
+        console.log("BASE DE DATOS LISTA PARA USAR")
     } catch (error) {
         console.log(error.message);
     }
 }
 
-LoadDB()
+ LoadDB()
