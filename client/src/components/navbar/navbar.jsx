@@ -11,7 +11,7 @@ function Navbar() {
         <>
           <div className={style.butn}>
           <Link to= '/cart'><h2>🛒</h2></Link>
-            <Link to= '/login'><button >Log In</button></Link>
+            <Link to= '/auth'><button >Log In</button></Link>
           </div>
           <Search/>
         </>
