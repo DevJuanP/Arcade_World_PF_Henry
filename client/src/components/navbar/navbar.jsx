@@ -10,7 +10,7 @@ function Navbar() {
       {location.pathname !== '/login' && (
         <>
           <div className={style.butn}>
-           <div><h2>🛒</h2></div>
+          <Link to= '/cart'><h2>🛒</h2></Link>
             <Link to= '/login'><button >Log In</button></Link>
           </div>
           <Search/>
