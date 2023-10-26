@@ -3,7 +3,9 @@
 
 function Search() {
   return (
-    <div>Search</div>
+    <div>
+      <h2>Search</h2>
+      </div>
   )
 }
 
