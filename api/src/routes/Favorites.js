@@ -11,13 +11,28 @@ FBrouter.post('/', async ( req, res) => {
         const usuario = await User.findByPk(UserId);
         const juego = await Videogame.findByPk(GameId);
         
-        await VG_user.create({
+        const relation = await VG_user.findOne({ where: { 
             UserId: UserId,
-            VideogameId: GameId,
-            favorites: true,
-          });
+            VideogameId: GameId
+        } })
+
+        if(relation){
+            await VG_user.update({ favorites: true }, {
+                where: {
+                    UserId: UserId,
+                    VideogameId: GameId
+                }
+              });
+        } else{
+            await VG_user.create({
+                UserId: UserId,
+                VideogameId: GameId,
+                favorites: true,
+              });
+        }
+        
         res.status(200).json({
-            succses: 'se agregó un favorito'
+            succses: 'favorito creado'
         })
     } catch (error) {
         res.status(400).json({error: error.message})
