@@ -1,8 +1,8 @@
-
+import Details from "../../components/details/details"
 
 function Detail() {
   return (
-    <div>Detail</div>
+    <div><Details></Details></div>
   )
 }
 
