@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <div>
       <div className={style.butn}>
-        <Link to= '/login'><button >Log In</button></Link>
+        <Link to= '/auth'><button >Log In</button></Link>
       </div>
        <Search/>
 

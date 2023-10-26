@@ -25,7 +25,7 @@
 }
 .btnAuth0{
     border: 2px solid black;
-    padding: 0.8rem 4rem 1rem;
+    padding: 0.8rem 5rem 1rem;
 }
 .googleIcon{
     width: 20px;
@@ -37,4 +37,10 @@
     outline: none;
     color: #0645AD;
     background-color: transparent;
+}
+.error{
+    color: red;
+}
+span{
+    display: block;
 }
