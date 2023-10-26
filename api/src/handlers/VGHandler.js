@@ -3,6 +3,7 @@ const {Op} = require('sequelize')
 
 const getAllVGHandler = async (req, res) => {
     try {
+
         const games = await Videogame.findAll({
             include:[
                 {model: genre},
@@ -22,6 +23,7 @@ const getAllVGHandler = async (req, res) => {
                 platforms: vg.platforms.map( p => p.name)
             }
         })
+        
         res.status(200).json(gamesParsed)
     } catch (error) {
         res.status(400).json({error: error.message})

@@ -15,8 +15,11 @@ const getAllUserHandler = async (req, res) => {
 
 const postUserHandler = async (req, res) => {
     try {
-        const {name} = req.body
-        await User.create({name})
+        const {name, lastname, nickname, password, Email} = req.body
+        //validaciones
+        //if(!name || !lastname || !nickName || !)
+        //
+        await User.create({name, lastname, nickname, password, Email})
         res.status(200).json({
             succses: 'The user was successfully uploaded to the database'
         })
