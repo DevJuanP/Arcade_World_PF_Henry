@@ -8,6 +8,7 @@ const initialState = {
   genres:[],
   selectedGenre: null,
   selectedPlatform: null
+
  }  
 
  const rootReducer = (state=initialState, action)=> {
@@ -48,8 +49,6 @@ const initialState = {
             ...state,
             selectedPlatform: action.payload,
           };
-                        
-
     default:
       return {...state}  
   }

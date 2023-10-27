@@ -12,10 +12,9 @@ export const getGames = ()=>{
   return async function(dispatch) {
   try {
    const dataGm = (await axios.get('http://localhost:3001/videogame')).data;
-   const platforms = [...new Set(dataGm.flatMap(game => game.platforms))];
    return dispatch({
       type: GET_GAMES, 
-      payload: { games: dataGm, platforms }
+      payload: { games: dataGm }
     });
     
   } catch (error) {
