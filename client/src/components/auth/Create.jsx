@@ -12,10 +12,12 @@ const Create = () => {
         data.image = image
         console.log('data', data);
         Swal.fire({
-            title: 'Welcome to Arcade World',
-            text: '',
+            position: 'top-center',
             icon: 'success',
-        });
+            title: 'Welcome to arcade World',
+            showConfirmButton: false,
+            timer: 1500
+          })
         setImage('')
         reset()
     });
