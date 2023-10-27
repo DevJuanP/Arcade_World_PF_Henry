@@ -1,0 +1,33 @@
+.News{
+    background-color: grey;
+    min-height:30em ;
+    .card_news{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 2em;
+    }
+}
+.More{
+    background-color: gray;
+    min-height:30em ;
+    .cards_more{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 2em;
+    }
+}
+.Rating{
+    background-color: gray;
+    min-height:30em ;
+    .cards_rating{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 2em;
+    }
+}
+.callofduty{
+    width: 100%;
+}

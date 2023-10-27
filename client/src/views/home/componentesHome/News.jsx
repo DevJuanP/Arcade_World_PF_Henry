@@ -1,8 +1,16 @@
 // import React from 'react'
-
-function News() {
+import './Style/NewsStyle.css'
+function News({name,price,image}) {
+  
   return (
-    <div>the news</div>
+    <div className='section_news'>
+      <div className='card'>
+      <img className='image' src={image} alt=""  />
+      <h5 className='title' >{name}</h5>
+      <p className='price'>{price}</p>
+      </div>
+      
+    </div>
   )
 }
 

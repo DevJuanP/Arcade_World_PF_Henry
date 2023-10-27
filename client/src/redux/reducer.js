@@ -10,10 +10,10 @@ const initialState = {
 
   switch (action.type) {
     case GET_GAMES:
-     return {
+      return {
       ...state,
       games: action.payload
-      };
+    };
     case GET_GAME_NAME:
       return {
        ...state,

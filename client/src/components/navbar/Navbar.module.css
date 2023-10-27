@@ -4,7 +4,10 @@
   font-size: 20px;
   
 }
-
+.contener{
+  display: flex;
+  align-items: center;
+}
 .navContent{
   display: flex;
   flex-direction: row;
