@@ -1,8 +1,14 @@
-
+import Cards from "../../components/cards/Cards";
+import Paginate from "../../components/paginate/Paginate";
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+       <Cards/>
+       <div>
+         <Paginate/>
+       </div>
+    </div>
   )
 }
 
