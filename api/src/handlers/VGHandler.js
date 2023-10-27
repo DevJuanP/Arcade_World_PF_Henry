@@ -3,6 +3,7 @@ const {Op} = require('sequelize')
 
 const getAllVGHandler = async (req, res) => {
     try {
+
         const games = await Videogame.findAll({
             include:[
                 {model: genre},
@@ -22,6 +23,7 @@ const getAllVGHandler = async (req, res) => {
                 platforms: vg.platforms.map( p => p.name)
             }
         })
+        
         res.status(200).json(gamesParsed)
     } catch (error) {
         res.status(400).json({error: error.message})
@@ -63,7 +65,7 @@ const getVGbyNameHandler = async (req, res) => {
     const {name} = req.query
     if(!name) return getAllVGHandler(req, res)
     try {
-        const tofind = name.split(' ') //[war, dragon]
+        const tofind = name.split(' ') //"war gragon" → ["war", "dragon"], ["portal"]
         let gameDB = await Videogame.findAll({
             where: {
                 [Op.or]: tofind.map(str => {
