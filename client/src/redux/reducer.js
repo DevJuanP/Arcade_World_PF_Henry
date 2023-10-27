@@ -6,6 +6,7 @@ const initialState = {
   gameFilter: [],
   platforms:[],
   genres:[]
+
    
  }  
 
@@ -17,6 +18,7 @@ const initialState = {
       ...state,
       games: action.payload,
       platforms: action.payload.platforms
+
       };
     case GET_GAME_NAME:
       return {
@@ -38,7 +40,6 @@ const initialState = {
          return {
           ...state,
         };            
-
     default:
       return {...state}  
   }
