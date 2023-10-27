@@ -1,5 +1,4 @@
 const { Videogame, genre, platform } = require('../db') 
-const {Op} = require('sequelize')
 
 const getAllVGHandler = async (req, res) => {
     try {
@@ -78,6 +77,7 @@ const getVGbyNameHandler = async (req, res) => {
             }
         })
         res.status(200).json(gameDB)
+
     } catch (error) {
         res.status(400).json({error: error.message})
     }
@@ -100,7 +100,5 @@ const postVGHandler = async (req, res) => {
 
 module.exports = {
     postVGHandler,
-    getAllVGHandler,
-    getVGbyIdHandler,
-    getVGbyNameHandler
+    getAllVGHandler
 }

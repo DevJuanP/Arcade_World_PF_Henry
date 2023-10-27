@@ -1,19 +1,23 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import Search from '../search/Search';
 import style from './Navbar.module.css'
 
 function Navbar() {
-
+  const location = useLocation();
   
   return (
     <div>
-      <div className={style.butn}>
-        <Link to= '/login'><button >Log In</button></Link>
-      </div>
-       <Search/>
-
+      {location.pathname !== '/login' && (
+        <>
+          <div className={style.butn}>
+          <Link to= '/cart'><h2>🛒</h2></Link>
+            <Link to= '/auth'><button >Log In</button></Link>
+          </div>
+          <Search/>
+        </>
+      )}
       <div className={style.navContent}>
-        <NavLink className={style.homeForm} to= '/'>Inicio</NavLink>
+        <NavLink className={style.homeForm} to= '/'>Home</NavLink>
         <NavLink className={style.homeForm} to= '/store'>Store</NavLink>
         <NavLink className={style.homeForm} to= '/library'>Library</NavLink>
         <NavLink className={style.homeForm} to= '/about'>About</NavLink>
