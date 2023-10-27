@@ -21,7 +21,50 @@ platforms(sequelize)
 const { Videogame, User, genre, platform } = sequelize.models
 
 ///Las relaciones:
-
+const VG_User = sequelize.define('VG_user', {
+    favorites: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+    },
+    comprado: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+    },
+    review: {
+        type: DataTypes.STRING,
+        defaultValue: ''
+    },
+    graphics: {
+        type: DataTypes.INTEGER,
+        validate: {
+            isIn: {
+              args: [[0, 1, 2, 3, 4, 5]],
+              msg: 'El valor debe ser 0, 1, 2, 3, 4 o 5',
+            },
+        },
+        defaultValue:0
+    },
+    gameplay: {
+        type: DataTypes.INTEGER,
+        validate: {
+            isIn: {
+              args: [[0, 1, 2, 3, 4, 5]],
+              msg: 'El valor debe ser 0, 1, 2, 3, 4 o 5',
+            },
+        },
+        defaultValue:0
+    },
+    quality_price: {
+        type: DataTypes.INTEGER,
+        validate: {
+            isIn: {
+              args: [[0, 1, 2, 3, 4, 5]],
+              msg: 'El valor debe ser 0, 1, 2, 3, 4 o 5',
+            },
+        },
+        defaultValue:0
+    },
+}, {timestamps: false})
 //hola :c
 Videogame.belongsToMany(User, {through: VG_User})
 User.belongsToMany(Videogame, {through: VG_User})
