@@ -65,7 +65,7 @@ const getVGbyNameHandler = async (req, res) => {
     const {name} = req.query
     if(!name) return getAllVGHandler(req, res)
     try {
-        const tofind = name.split(' ') //[war, dragon]
+        const tofind = name.split(' ') //"war gragon" → ["war", "dragon"], ["portal"]
         let gameDB = await Videogame.findAll({
             where: {
                 [Op.or]: tofind.map(str => {
