@@ -1,0 +1,20 @@
+.container_search{
+    display: flex;
+}
+.search{
+    height: 2em;
+    border-top-left-radius: 0.5em;
+border-bottom-left-radius: 0.5em;
+
+}
+.search_button{
+ height: 2.5em;
+ background: rgb(164, 164, 164);
+ border: none;
+border-top-right-radius: 0.5em;
+border-bottom-right-radius: 0.5em;
+
+}
+
+
+

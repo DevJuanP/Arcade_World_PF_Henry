@@ -4,7 +4,10 @@
   font-size: 20px;
   
 }
-
+.contener{
+  display: flex;
+  align-items: center;
+}
 .navContent{
   display: flex;
   flex-direction: row;
@@ -20,6 +23,7 @@
   justify-content: flex-end;
   margin-top: 1rem;
   margin-inline-end: 2rem; 
+  gap: 1rem;
 }
 
 .butn button {
