@@ -1,8 +1,9 @@
-import { GET_GAMES, GET_GAME_NAME, GET_GAME_ID } from './actions.js';
+import { GET_GAMES, GET_GAME_NAME, GET_GAME_ID, FILTER_PLATFORMS, FILTER_GENRES } from './actions.js';
 
 const initialState = {
   games:[],
-  gameId: []
+  gameId: [],
+  gameFilter: []
    
  }  
 
@@ -23,7 +24,15 @@ const initialState = {
        return {
         ...state,
         gameId: action.payload
-        };  
+        };
+    case FILTER_PLATFORMS:
+        return {
+         ...state,
+        }; 
+     case FILTER_GENRES:
+         return {
+          ...state,
+        };            
 
     default:
       return {...state}  
