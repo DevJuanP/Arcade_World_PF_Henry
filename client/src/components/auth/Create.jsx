@@ -1,18 +1,22 @@
-
+import React, {useState}  from 'react'
 import { useForm,  } from 'react-hook-form'
 import Swal from 'sweetalert2';
+import UploadImage from '../upload/UploadImage';
 import './auth.css'
 
 const Create = () => {
+    const [image, setImage] = useState('');
     const { register, handleSubmit, formState: { errors, isDirty }, reset, watch } = useForm();
 
     const onSubmit = handleSubmit((data)=> {
+        data.image = image
         console.log('data', data);
         Swal.fire({
             title: 'Welcome to Arcade World',
             text: '',
             icon: 'success',
         });
+        setImage('')
         reset()
     });
     return ( 
@@ -79,8 +83,8 @@ const Create = () => {
                             className='loginInput' 
                             type="text" 
                             placeholder='Usuario'
-                            name="user"
-                            {...register('user', {
+                            name="nickName"
+                            {...register('nickName', {
                                 required: {
                                     value: true,
                                     message: 'UserName is required'
@@ -154,6 +158,7 @@ const Create = () => {
                     {
                     errors.confirmPassword && (<span className='error'>{errors.confirmPassword.message}</span>)
                     }
+                    <UploadImage image={image} setImage={setImage}/>
                     </div>
                             <button disabled={!isDirty} type='submit' className='btnRegistro'>Registrate</button>
                     </div>
