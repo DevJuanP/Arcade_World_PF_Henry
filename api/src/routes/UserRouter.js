@@ -1,9 +1,11 @@
 const { Router } = require("express") ;
-const { getAllUserHandler, postUserHandler } = require("../handlers/UserHandlers.js") ;
+const { getAllUserHandler, postUserHandler, loginUserHandler, VG_userHandler } = require("../handlers/UserHandlers.js") ;
 
-const VGrouter = Router()
+const UserRouter = Router()
 
-VGrouter.get('/', getAllUserHandler)
-VGrouter.post('/', postUserHandler)
+UserRouter.get('/', getAllUserHandler)
+UserRouter.post('/register', postUserHandler)
+UserRouter.post('/login', loginUserHandler)
+UserRouter.post('/logout', VG_userHandler)
 
-module.exports =  VGrouter
+module.exports =  UserRouter
