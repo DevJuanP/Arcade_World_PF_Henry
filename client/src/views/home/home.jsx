@@ -1,3 +1,4 @@
+
 import News from './components/News'
 import MoreDownload from './components/MoreDownload'
 import Rating from './components/Rating'
@@ -5,6 +6,9 @@ import {useDispatch,useSelector}from 'react-redux'
 import { getGames } from "../../redux/actions"
 import { useEffect } from "react"
 import Carrusel from './components/Carrusel'
+import Cards from "../../components/cards/Cards";
+import Paginate from "../../components/paginate/Paginate";
+
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -65,6 +69,10 @@ const Home = () => {
           )
         })
        }
+       <Cards/>
+       <div>
+         <Paginate/>
+
        </div>
     </div>
   )
