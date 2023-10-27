@@ -28,13 +28,13 @@ const Login = () => {
           <div>
                 <input
                   type='text'
-                  name='name'
+                  name='nick_email'
                   className='loginInput'
                   placeholder='Email o Username'
-                  {...register('name', {
+                  {...register('nick_email', {
                     required: {
                       value: true,
-                      message: 'Name is required'
+                      message: 'User o Email required'
                     },
                     maxLength: 20,
                     minLength: 3
